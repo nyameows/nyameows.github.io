@@ -21,7 +21,39 @@
                 <li><a href="/pages/posts.html">posts</a></li>
                 <li><a href="/pages/tools.html">tools</a></li>
             </ul>
-        </nav>
+         </nav>
+         <!DOCTYPE html>
+    <div id="discord_status">Loading...</div>
+
+        <script>
+            const userId = "376315298481045504";
+            const statusDiv = document.getElementById("discord_status");
+
+            async function fetchDiscordStatus() {
+             try {
+            const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+            const data = await response.json();
+            const status = data.data.discord_status;
+
+            const statusClass = {
+            online: "status-online",
+             idle: "status-idle",
+             dnd: "status-dnd",
+             offline: "status-offline"
+            }[status] || "status-offline";
+
+            statusDiv.innerHTML = ` 
+            <span class="${statusClass}">${status.replace('_', ' ')}</span>
+            `;
+            }
+            catch (error) {
+                statusDiv.innerHTML = "Couldn't load status.";
+             }
+         }
+
+            fetchDiscordStatus();
+        </script>
+
         </section>
             
         <section>
