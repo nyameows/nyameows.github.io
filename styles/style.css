@@ -9,7 +9,7 @@ body {
     margin: auto;
     overflow: hidden;
     font-family: 'Plus Jakarta Sans', Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 .navbar a{
@@ -24,7 +24,7 @@ body {
     margin-top: 4.8px;
 }
 .navbar li:first-child {
-    margin-right: 419px;
+    margin-right: 396px;
     margin-top: 0px;
 }
 .discord {
