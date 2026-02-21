@@ -9,8 +9,10 @@ body {
     margin: auto;
     overflow: hidden;
     font-family: 'Plus Jakarta Sans', Inter;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
+    display: flex;
+    flex-direction: row;
 }
 .navbar a{
     color: rgb(191, 50, 100);
@@ -19,28 +21,25 @@ body {
     display: block;
     text-align: center;
 }
-.navbar li{
-    float:left;
+.navbar li {
     margin-top: 4.8px;
+    display: flex;
+    width: 100px
 }
 .navbar li:first-child {
-    margin-right: 396px;
+    margin-right: 0px;
     margin-top: 0px;
 }
-.discord {
+.introduction{
     font-family: 'Plus Jakarta Sans', Inter;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgb(215, 187, 240);
-    margin-block-end: auto;
-    overflow: hidden;
-}
-.intro{
-    font-family: 'Plus Jakarta Sans', Inter;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
-    margin: 20px 0;
+    margin: 10px 0;
     padding: 10px;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
+}
+.introduction h3{
+    font-size: 20px;
+    margin-bottom: 15px;
 }

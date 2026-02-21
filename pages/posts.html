@@ -3,9 +3,9 @@
     
 
     <head>
-        <title>Posts</title>
+        <title>Blog</title>
         <link rel="shortcut icon" type="image/x-icon" href="/assets/kita.jpg">
-        <link rel="stylesheet" href="/styles/posts.css">
+        <link rel="stylesheet" href="/styles/blog.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,10 +18,61 @@
         <section> <!--top menu-->
              <nav class="navbar">
             <ul>
-                <li><a href="/"><img src="/assets/kita.jpg" alt="icon" style="width: 40px;height: 40px;"></a></li>
-                <li><a href="/pages/posts.html">posts</a></li>
-                <li><a href="/pages/devices.html">devices</a></li>
+                <li><a href="/"><img src="/assets/kita.jpg" alt="icon" style="width: 53px;height: 53px;border-radius: 50%;"></a></li>
+                <li><a href="/pages/posts.html">Blog</a></li>
+                <li><a href="/pages/devices.html">Devices</a></li>
             </ul>
          </nav>
+         <h1 id="reconstructing-images-with-brush-and-colmap">Reconstructing images with Brush and COLMAP</h1>
+   <p>Recently I have been experimenting with different ways of rendering images into a 3d workspace. I have tried all
+      sorts of different tools, but Brush stands out among them as being both easy to get started with, while also not
+      sacrificing on quality or speed.</p>
+   <h2 id="reconstructing-your-images">Reconstructing your images</h2>
+   <p>Brush has one disadvantage compared to other rendering engines: it can only render already reconstructed images.
+      To do that, we will need another tool called COLMAP.</p>
+   <ol>
+      <li>
+         <p>To download COLMAP, head to <strong><a href="https://github.com/colmap/colmap/releases/tag/3.13.0">this
+                  link</a></strong>. Download either the CUDA or non-CUDA version depending on if you have an Nvidia
+            GPU. Alternativelly if you are running linux you can use the <strong><a
+                  href="https://colmap.github.io/install.html#pre-built-binaries">official guide linked
+                  here</a></strong>.</p>
+      </li>
+      <li>
+         <p>Open colmap.bat and click on the <strong>&quot;Reconstruction&quot;</strong> menu and select
+            <strong>&quot;Automatic reconstruction&quot;</strong>. You only want to specify 2 folders here, The
+            Workspace folder and the folder with your source images. (Keep in mind COLMAP only supports OpenImageIO
+            formats like JPG and PNG). Leave everything else at it is and <strong>press run</strong>.<img
+               src="/assets/posts/gaussian blur/colmap_render_settings.png" alt="Automatic Reconstruction"> <br>
+            If you did everything correctly, it should render and look like this.<img src="/assets/posts/gaussian blur/colmap_render.png"
+               alt="COLMAP render"></p>
+      </li>
+   </ol>
+   <h2 id="setting-up-brush">Setting up Brush</h2>
+   <ol>
+      <li>
+         <p>Download Brush from this <strong><a href="https://github.com/ArthurBrussee/brush/releases/tag/v0.3.0">GitHub
+                  repo</a></strong>.</p>
+      </li>
+      <li>
+         <p>After opening it should load you into a very simple GUI.
+            To open your freshly reconstructed images, click on <strong>&quot;Directory</strong> and select the
+            <strong>Workspace folder</strong> you specified in COLMAP. It should have two folders inside like in the
+            image below, <strong>Do not click</strong> on them and just press <strong>&quot;Select
+               Folder&quot;</strong>. <img src="/assets/posts/gaussian blur/brush folder select.png" alt="Folder Select"> It should now open a settings
+            menu. For a first try I would reccomened leaving everything at default and pressing
+            <strong>&quot;Start&quot;</strong>. <img src="/assets/posts/gaussian blur/brush pre render.png" alt="Settings menu">
+            It might take a bit for your project to render depending on which quality you selected. After it&#39;s
+            rendered, you are pretty much done. (Shoutout to my awesome girlfriend for providing me with the sample
+            images for this guide)<img src="/assets/posts/gaussian blur/brush pre render.png" alt="Eiskoffe render">Now you can export your project by clicking
+            <strong>&quot;Control&quot;</strong> arrow right below <strong>&quot;Scene&quot;</strong> and click
+            &quot;Export&quot;.</p>
+      </li>
+   </ol>
+   <h2 id="conclusion">Conclusion</h2>
+   <p>In the beginning I found all of this to be pretty confusing and scary but as this guide hopefully proved rendering
+      images into a 3d workspace is not at all daunting but actually pretty easy if you take just a little bit of time
+      to learn the basics. Also this is the first ever article I wrote so I am open to any critiques and suggestions.
+   </p>
         </section>
     
